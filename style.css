@@ -27,8 +27,8 @@ body{
     transform: scaleX(0.712125);
     height: 50px;
     position: absolute;
-    left:20px;
-    top:20px;
+    left:30px;
+    top:30px;
   }
 
   ::-webkit-scrollbar{ 
