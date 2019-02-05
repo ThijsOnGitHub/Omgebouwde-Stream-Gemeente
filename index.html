@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body id="body">
+    <div id="inleiding">
+      <img id="uitlegFoto" src="Site%20afbeelding.png" width="700px">
+      <iframe id="uitlegVideo" style="display:none;" width="700" height="380" src="https://www.youtube.com/embed/gAoBTRnObaU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <button style="display:none; margin-left: 270px;margin-bottom:10px;"  id="terugKnop">terug naar afbeelding</button>
+    </div>
+    <form>
+      <iframe style="display:none;" id="iframe" src="" width="1024" height="576" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
+      <input onchange="nieuweStream();"  onclick="leeg();" id="invoer"  placeholder='Vul hier het deel uit de embedlink in dat achter de src en tussen de " "'>
+    </form>
+    <p> Vind hier de link voor de streams <a href="https://channel.royalcast.com/gemeentekrimpenerwaard/#!/upcoming" target="_blank" >Klik hier voor de link</a>.</p>
+    <p> <button id="fullScreen" style="margin-left: 270px;"> Klik hier voor full screen</button></p>
+
+    <script type="text/javascript" src="test.js"></script>
+
+  </body>
+</html>
