@@ -25,6 +25,7 @@ fullScreen.addEventListener("click",function(){
     full=false
   }else{
     document.getElementById("body").webkitRequestFullscreen();
+    //document.getElementById("iframe").webkitRequestFullscreen();
     fullScreen.innerHTML="Klik hier voor verkleinen"
     full=true
     console.log(full)
