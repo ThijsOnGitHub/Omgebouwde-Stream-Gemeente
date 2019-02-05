@@ -22,6 +22,11 @@ body{
     padding: 10px;
     border: 5px;
   }
+  .RTVLogo{
+      position: absolute;
+      left:20px;
+      top:20px;
+  }
   ::-webkit-scrollbar{ 
     width: 0px
   }

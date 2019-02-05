@@ -11,6 +11,7 @@ uitlegFoto.addEventListener("click",function(){
   uitlegVideo.style.display="";
   terugKnop.style.display="block";
 })
+
 terugKnop.addEventListener("click",function(){
   uitlegFoto.style.display="";
   uitlegVideo.style.display="none";
