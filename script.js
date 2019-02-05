@@ -37,6 +37,7 @@ function nieuweStream (){
   iframe.style.display="";
   inleiding.style.display="none";
 }
+
 function leeg() {
   invoer.value=""
 }
