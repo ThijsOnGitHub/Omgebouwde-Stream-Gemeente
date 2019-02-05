@@ -24,10 +24,11 @@ body{
   }
 
   #RTVLogo{
-      height: 50px;
-      position: absolute;
-      left:20px;
-      top:20px;
+    transform: scaleX(0.712125);
+    height: 50px;
+    position: absolute;
+    left:20px;
+    top:20px;
   }
 
   ::-webkit-scrollbar{ 
