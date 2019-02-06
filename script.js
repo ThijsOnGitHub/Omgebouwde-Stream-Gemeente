@@ -4,7 +4,17 @@ fullScreen=document.getElementById("fullScreen")
 uitlegFoto=document.getElementById("uitlegFoto")
 uitlegVideo=document.getElementById("uitlegVideo")
 terugKnop=document.getElementById("terugKnop")
+checkLogoInBeeld=document.getElementById("CheckLogoInBeeld")
+logo=document.getElementById("RTVLogo")
 var full=false;
+
+checkLogoInBeeld.addEventListener("click",function(){
+  if(checkLogoInBeeld.checked==true){
+    logo.style.display=""
+  }else{
+    logo.style.display="none"
+  }
+})
 
 uitlegFoto.addEventListener("click",function(){
   uitlegFoto.style.display="none";
