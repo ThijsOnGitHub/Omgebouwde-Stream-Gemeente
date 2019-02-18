@@ -1,11 +1,11 @@
-iframe=document.getElementById("iframe")
-inleiding=document.getElementById("inleiding")
-fullScreen=document.getElementById("fullScreen")
-uitlegFoto=document.getElementById("uitlegFoto")
-uitlegVideo=document.getElementById("uitlegVideo")
-terugKnop=document.getElementById("terugKnop")
-checkLogoInBeeld=document.getElementById("CheckLogoInBeeld")
-logo=document.getElementById("RTVLogo")
+var iframe=document.getElementById("iframe")
+var inleiding=document.getElementById("inleiding")
+var fullScreen=document.getElementById("fullScreen")
+var uitlegFoto=document.getElementById("uitlegFoto")
+var uitlegVideo=document.getElementById("uitlegVideo")
+var terugKnop=document.getElementById("terugKnop")
+var checkLogoInBeeld=document.getElementById("CheckLogoInBeeld")
+var logo=document.getElementById("RTVLogo")
 var full=false;
 
 checkLogoInBeeld.addEventListener("click",function(){
@@ -48,6 +48,15 @@ function nieuweStream (){
   iframe.style.display="";
   inleiding.style.display="none";
 }
+
+document.addEventListener("keydown",function(event){
+  if (event.key=="ArrowUp"){
+    logo.style.height = (Number(window.getComputedStyle(logo).height.replace("px",""))+1).toString()+"px"
+  }else if(event.key=="ArrowDown"){
+    logo.style.height = (Number(window.getComputedStyle(logo).height.replace("px",""))-1).toString()+"px"
+  }
+})
+
 
 function leeg() {
   invoer.value=""
