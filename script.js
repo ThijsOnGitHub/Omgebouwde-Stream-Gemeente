@@ -6,7 +6,38 @@ var uitlegVideo=document.getElementById("uitlegVideo")
 var terugKnop=document.getElementById("terugKnop")
 var checkLogoInBeeld=document.getElementById("CheckLogoInBeeld")
 var logo=document.getElementById("RTVLogo")
+var logoSize=document.getElementById("logoSize")
 var full=false;
+
+
+function setButton(id,property,amount){
+  var IdSetButton=document.getElementById(id)
+    IdSetButton.addEventListener("click",function(){
+      IdSetButton.innerHTML="klik op een toets"
+      document.addEventListener("keydown",function(event){
+        if (IdSetButton.innerHTML=="klik op een toets"){
+          IdSetButton.innerHTML= event.key}
+      })
+    })
+    document.addEventListener("keydown",function(event){
+      if (event.key==IdSetButton.innerHTML){
+        console.log(window.getComputedStyle(logo)[property])
+        logo.style[property] = (Number(window.getComputedStyle(logo)[property].replace("px",""))+amount).toString()+"px"
+        event.preventDefault()
+        //logoSize.innerHTML="Het logo is "+logo.style.property+" breed"
+      }
+    })
+  }
+
+
+
+
+setButton("groterButton","height",1)
+setButton("kleinerButton","height",-1)
+setButton("linksButton","left",-1)
+setButton("rechtsButton","left",1)
+setButton("omhoogButton","top",-1)
+setButton("omlaagButton","top",1)
 
 checkLogoInBeeld.addEventListener("click",function(){
   if(checkLogoInBeeld.checked==true){
@@ -48,15 +79,6 @@ function nieuweStream (){
   iframe.style.display="";
   inleiding.style.display="none";
 }
-
-document.addEventListener("keydown",function(event){
-  if (event.key=="ArrowUp"){
-    logo.style.height = (Number(window.getComputedStyle(logo).height.replace("px",""))+1).toString()+"px"
-  }else if(event.key=="ArrowDown"){
-    logo.style.height = (Number(window.getComputedStyle(logo).height.replace("px",""))-1).toString()+"px"
-  }
-})
-
 
 function leeg() {
   invoer.value=""

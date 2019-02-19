@@ -13,10 +13,17 @@
       <iframe style="display:none;" id="iframe" src="" width="1024" height="576" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
       <form>
         <input onchange="nieuweStream();"  onclick="leeg();" id="invoer"  placeholder='Vul hier het deel uit de embedlink in dat achter de src en tussen de " "'>
+        <p> Vind hier de link voor de streams <a href="https://channel.royalcast.com/gemeentekrimpenerwaard/#!/upcoming" target="_blank" >Klik hier voor de link</a>.</p>
         <p></p>
         <input type="checkbox" height="50px" id="CheckLogoInBeeld" checked>Logo in beeld</br>
+        <p>Logo Groter: <a id="groterButton" style="margin-left: 40px;">g</a></p></br>
+        <p>Logo Kleiner:<a id="kleinerButton" style="margin-left: 40px;">k</a></p></br>
+        <p>Logo links:<a id="linksButton" style="margin-left: 40px;">ArrowLeft</a></p></br>
+        <p>Logo rechts:<a id="rechtsButton" style="margin-left: 40px;">ArrowRight</a></p></br>
+        <p>Logo omhoog:<a id="omhoogButton" style="margin-left: 40px;">ArrowUp</a></p></br>
+        <p>Logo omlaag:<a id="omlaagButton" style="margin-left: 40px;">ArrowDown</a></p></br>
       </form>
-    <p> Vind hier de link voor de streams <a href="https://channel.royalcast.com/gemeentekrimpenerwaard/#!/upcoming" target="_blank" >Klik hier voor de link</a>.</p>
+    <p id="logoSize">Het logo is 70px breed</p>
     <p> <button id="fullScreen" style="margin-left: 270px;"> Klik hier voor full screen</button></p>
     <p style="color:red;font-size: 40px; font:bold  ">Klik pijltje omloog of omlaag om het logo groter of kleiner te maken</p>
     <img id="RTVLogo" src="RTV Krimpenerwaard_logo.png">

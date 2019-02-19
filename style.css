@@ -13,7 +13,8 @@ body{
     width: 720px;
     height: 20px;
   }
-  button{
+  button,a{
+    cursor: pointer;
     background-color:deepskyblue;
     border-color: dodgerblue;
     padding: 10px;
