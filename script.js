@@ -10,6 +10,82 @@ var logoSize=document.getElementById("logoSize")
 var full=false;
 
 
+checkLogoInBeeld.addEventListener("click",function(){
+  if(checkLogoInBeeld.checked==true){
+    logo.style.display=""
+  }else{
+    logo.style.display="none"
+  }
+})
+
+uitlegFoto.addEventListener("click",function(){
+  uitlegFoto.style.display="none";
+  uitlegVideo.style.display="";
+  terugKnop.style.display="block";
+})
+
+terugKnop.addEventListener("click",function(){
+  uitlegFoto.style.display="";
+  uitlegVideo.style.display="none";
+  terugKnop.style.display="none";
+})
+
+function fullScreenSwitch(){
+  if(full){
+    document.webkitCancelFullScreen();
+    console.log("hello")
+    fullScreen.innerHTML="Klik hier voor fullscreen"
+    full=false
+  }else{
+    document.getElementById("body").webkitRequestFullscreen();
+    //document.getElementById("iframe").webkitRequestFullscreen();
+    fullScreen.innerHTML="Klik hier voor verkleinen"
+    full=true
+    console.log(full)
+  }
+}
+
+
+function setButtonFull(id){
+  var IdSetButton=document.getElementById(id)
+    IdSetButton.addEventListener("click",function(){
+      IdSetButton.innerHTML="klik op een toets"
+      document.addEventListener("keydown",function(event){
+        if (IdSetButton.innerHTML=="klik op een toets"){
+          IdSetButton.innerHTML= event.key}
+      })
+    })
+    document.addEventListener("keydown",function(event){
+      if (event.key==IdSetButton.innerHTML){
+        fullScreenSwitch()
+        //logoSize.innerHTML="Het logo is "+logo.style.property+" breed"
+      }
+    })
+  }
+
+fullScreen.addEventListener("click",function(){ 
+  fullScreenSwitch()
+})
+
+setButtonFull("fullscreenKey")
+
+function nieuweStream (){
+  iframe.src=(invoer.value)
+  iframe.style.display="";
+  inleiding.style.display="none";
+}
+
+function leeg() {
+  invoer.value=""
+}
+
+
+function importStream(){
+  
+}
+
+
+/*
 function setButton(id,property,amount){
   var IdSetButton=document.getElementById(id)
     IdSetButton.addEventListener("click",function(){
@@ -38,48 +114,4 @@ setButton("linksButton","left",-1)
 setButton("rechtsButton","left",1)
 setButton("omhoogButton","top",-1)
 setButton("omlaagButton","top",1)
-
-checkLogoInBeeld.addEventListener("click",function(){
-  if(checkLogoInBeeld.checked==true){
-    logo.style.display=""
-  }else{
-    logo.style.display="none"
-  }
-})
-
-uitlegFoto.addEventListener("click",function(){
-  uitlegFoto.style.display="none";
-  uitlegVideo.style.display="";
-  terugKnop.style.display="block";
-})
-
-terugKnop.addEventListener("click",function(){
-  uitlegFoto.style.display="";
-  uitlegVideo.style.display="none";
-  terugKnop.style.display="none";
-})
-
-fullScreen.addEventListener("click",function(){ 
-  if(full){
-    document.webkitCancelFullScreen();
-    console.log("hello")
-    fullScreen.innerHTML="Klik hier voor fullscreen"
-    full=false
-  }else{
-    document.getElementById("body").webkitRequestFullscreen();
-    //document.getElementById("iframe").webkitRequestFullscreen();
-    fullScreen.innerHTML="Klik hier voor verkleinen"
-    full=true
-    console.log(full)
-  }
-})
-
-function nieuweStream (){
-  iframe.src=(invoer.value)
-  iframe.style.display="";
-  inleiding.style.display="none";
-}
-
-function leeg() {
-  invoer.value=""
-}
+*/
