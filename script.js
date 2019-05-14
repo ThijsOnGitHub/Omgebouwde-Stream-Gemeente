@@ -45,8 +45,14 @@ function fullScreenSwitch(){
   }
 }
 
+document.addEventListener("keydown",function(event){
+  if (event.key=="k"){
+    console.log("test")
+    window.close()
+  }
+})
 
-function setButtonFull(id){
+function setButton(id,action){
   var IdSetButton=document.getElementById(id)
     IdSetButton.addEventListener("click",function(){
       IdSetButton.innerHTML="klik op een toets"
@@ -57,7 +63,7 @@ function setButtonFull(id){
     })
     document.addEventListener("keydown",function(event){
       if (event.key==IdSetButton.innerHTML){
-        fullScreenSwitch()
+        action()
         //logoSize.innerHTML="Het logo is "+logo.style.property+" breed"
       }
     })
@@ -67,7 +73,10 @@ fullScreen.addEventListener("click",function(){
   fullScreenSwitch()
 })
 
-setButtonFull("fullscreenKey")
+setButton("fullscreenKey",fullScreenSwitch)
+
+setButton("closekey",window.close)
+
 
 function nieuweStream (){
   iframe.src=(invoer.value)
